@@ -1,0 +1,22 @@
+{
+  "name": "Cap",
+  "image": "cap.png",
+  "corsair": false,
+  "legend": "Возможно, турок. Старый солдат, не знающий слов любви. Иногда придумывает пословицы и ругательства. Потом делает вид, что так говорят все уважаемые пираты.",
+  "friends": [
+    "Henry StormBlade",
+    "HellsingLan",
+    "Bloomberg"
+  ],
+  "coins": [
+    "34744",
+    "46aa0",
+    "ad8f"
+  ],
+  "ship": 1,
+  "location": [
+    12,
+    36
+  ],
+  "github": "naukomania"
+}
