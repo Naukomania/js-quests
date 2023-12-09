@@ -1,0 +1,11 @@
+{
+  "name": "Henry StormBlade",
+  "image": "Henry_StormBlade.png",
+  "corsair": true,
+  "legend": "Генри Штормовой клинок - высокий и мускулистый пират. Храбрый и решительный. Служил на 'Чёрной Жемчужине'",
+  "friends": ["Alex Hook", "cap"],
+  "coins": ["33f67", "5be4a", "85371"],
+  "ship": 1,
+  "location": [74, 5],
+  "github": "garryKarri"
+}
