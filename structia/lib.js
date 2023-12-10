@@ -9,11 +9,11 @@ function getCoin() {
  * @returns {Array<string>} - Массив из монет
  */
 function getCoins(n) {
-    const coins = [];
-    for (let i = 0; i < n; i++) {
-      coins.push(getCoin());
-    }
-    return coins;
+  const coins = [];
+  for (let i = 0; i < n; i++) {
+    coins.push(getCoin());
+  }
+  return coins;
 }
 
 function getCoord() {
