@@ -1,11 +1,4 @@
-const {
-  getCoin,
-  getCoins,
-  getCoord,
-  getCoords,
-  getShipNumber,
-  getGitNick,
-} = require('./lib.js');
+const { getCoins, getCoords, getShipNumber, getGitNick } = require('./lib.js');
 
 const user = {
   name: 'Henry StormBlade',
@@ -14,17 +7,10 @@ const user = {
   legend:
     "Генри Штормовой клинок - высокий и мускулистый пират. Храбрый и решительный. Служил на 'Чёрной Жемчужине'",
   friends: ['Alex Hook', 'Сap'],
-  coins: [],
-  ship: '',
-  location: [],
-  github: '',
+  coins: getCoins(3),
+  ship: getShipNumber(),
+  location: getCoords(2),
+  github: getGitNick(),
 };
-
-getCoin();
-getCoins(user);
-getCoord();
-getCoords(user);
-getShipNumber(user);
-getGitNick(user);
 
 console.log(user);
