@@ -25,8 +25,8 @@ const getCoords = (num) => {
   return newArr;
 };
 
-const getShipNumber = () => {
-  let random = (7 + 6) % 2 === 0 ? 2 : 1;
+const getShipNumber = (day, month) => {
+  let random = (day + month) % 2 === 0 ? 2 : 1;
   return random;
 };
 

@@ -8,7 +8,7 @@ const user = {
     "Генри Штормовой клинок - высокий и мускулистый пират. Храбрый и решительный. Служил на 'Чёрной Жемчужине'",
   friends: ['Alex Hook', 'Сap'],
   coins: getCoins(3),
-  ship: getShipNumber(),
+  ship: getShipNumber(7,6),
   location: getCoords(2),
   github: getGitNick(),
 };
