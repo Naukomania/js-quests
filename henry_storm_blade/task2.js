@@ -2,7 +2,7 @@ const { getCoins, getCoords, getShipNumber, getGitNick } = require('./lib.js');
 
 const user = {
   name: 'Henry StormBlade',
-  image: 'Henry_StormBlade.png',
+  image: "henry_storm_blade.png",
   corsair: true,
   legend:
     "Генри Штормовой клинок - высокий и мускулистый пират. Храбрый и решительный. Служил на 'Чёрной Жемчужине'",
