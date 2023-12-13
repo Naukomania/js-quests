@@ -1,7 +1,7 @@
 function getRandomColor() {
   const hexRGB = [];
   for (let i = 0; i < 3; i++) {
-    hex = Math.floor(Math.random() * 255).toString(16);
+    hex = Math.floor((Math.random() * 255) + 1).toString(16);
     hexRGB.push(hex.length === 1 ? '0' + hex : hex);
   }
   return `#${hexRGB[0]}${hexRGB[1]}${hexRGB[2]}`;
