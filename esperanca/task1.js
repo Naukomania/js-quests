@@ -29,7 +29,7 @@ function getCoord() {
   return Math.floor(Math.random() * 100);
 }
 
-for (let i = 0; i < 3; i += 1) {
+for (let i = 0; i < 4; i += 1) {
   user.coins.push(getCoin());
 }
 
