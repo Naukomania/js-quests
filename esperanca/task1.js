@@ -18,6 +18,7 @@ const user = {
   coins: [],
   ship: ((30 + 8) % 2) + 1,
   location: [],
+  github: 'NadezhdaDorogi',
 };
 
 function getCoin() {
@@ -33,6 +34,5 @@ for (let i = 0; i < 3; i += 1) {
 }
 
 user.location = [getCoord(), getCoord()];
-user.github = 'NadezhdaDorogi';
 
 console.log(JSON.stringify(user, null, 2));
