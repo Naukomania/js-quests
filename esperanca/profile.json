@@ -1,0 +1,23 @@
+{
+  "name": "Esperanca",
+  "image": "esperanca.png",
+  "corsair": false,
+  "legend": "Путешественница. Видит будущее. Там, где она всегда есть Надежда.",
+  "friends": [
+    "Cap",
+    "Maria",
+    "Structia",
+    "HellsingLan"
+  ],
+  "coins": [
+    "f1143",
+    "12029",
+    "21fe"
+  ],
+  "ship": 1,
+  "location": [
+    2,
+    60
+  ],
+  "github": "NadezhdaDorogi"
+}
