@@ -10,14 +10,15 @@
     "HellsingLan"
   ],
   "coins": [
-    "f1143",
-    "12029",
-    "21fe"
+    "ced01",
+    "57127",
+    "5614c",
+    "86a9f"
   ],
   "ship": 1,
   "location": [
-    2,
-    60
+    17,
+    72
   ],
   "github": "NadezhdaDorogi"
 }
