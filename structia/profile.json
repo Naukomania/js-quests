@@ -1,0 +1,22 @@
+{
+    "name": "Structia",
+    "image": "structia.png",
+    "corsair": false,
+    "legend": "Открывает новые горизонты. Не упустит возможность поспать в пивном трюме. Одноглазый. Заботится о собственном домашнем питоне",
+    "friends": [
+      "HellsingLan",
+      "Maria",
+      "Cap"
+    ],
+    "coins": [
+      "26f1f",
+      "e520",
+      "a286"
+    ],
+    "ship": 1,
+    "location": [
+      1,
+      18
+    ],
+    "github": "mksmvnv"
+}
