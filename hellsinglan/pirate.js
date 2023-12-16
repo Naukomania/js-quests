@@ -1,7 +1,7 @@
 // const user = require('./profile.json');
 
 function sayHi(user) {
-  return `Йо‑хо‑хо! Меня зовут ${user.name}. Я - не корсар.`;
+  return `Йо‑хо‑хо! Меня зовут ${user.name}. Я - ${user.corsare ? '' : 'не '}корсар.`;
 }
 
 function moveTo(user, moveX, moveY) {
