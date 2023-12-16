@@ -1,11 +1,11 @@
 // const user = require('./profile.json');
 
 function sayHi(user) {
-  console.log(`Йо‑хо‑хо! Меня зовут ${user.name}. Я - не корсар.`);
+  return `Йо‑хо‑хо! Меня зовут ${user.name}. Я - не корсар.`;
 }
 
 function moveTo(user, moveX, moveY) {
-  if (-1 <= moveX <= 1 && -1 <= moveY <= 1) {
+  if (-1 <= moveX && moveX <= 1 && -1 <= moveY && moveY <= 1) {
     if (0 <= user.location[0] <= 100) user.location[0] += moveX;
     if (0 <= user.location[1] <= 100) user.location[1] += moveY;
   }
