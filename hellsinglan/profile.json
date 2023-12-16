@@ -1,0 +1,22 @@
+{
+  "name": "HellsingLan",
+  "image": "hellsinglan.png",
+  "corsair": false,
+  "legend": "Беглый матрос с Летучего Голландца.",
+  "friend": [
+    "Cap",
+    "Structia",
+    "Oditrom"
+  ],
+  "coins": [
+    "d1b51",
+    "a82a8",
+    "ec76d"
+  ],
+  "ship": 1,
+  "location": [
+    83,
+    87
+  ],
+  "github": "HellsingLan"
+}
