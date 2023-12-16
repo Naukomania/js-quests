@@ -1,0 +1,22 @@
+{
+  "name": "Bloomberg",
+  "image": "bloomberg.png",
+  "corsair": true,
+  "legend": "Старый пират. Друг Флинта. Жаден. Ради денег готов на все. Характер мерзкий. Женат.",
+  "friends": [
+    "Esperança",
+    "Maria",
+    "Cap"
+  ],
+  "coins": [
+    "94e84",
+    "38a99",
+    "9d9f3"
+  ],
+  "ship": 2,
+  "location": [
+    97,
+    94
+  ],
+  "github": "BisVictor"
+}
