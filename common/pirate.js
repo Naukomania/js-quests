@@ -1,22 +1,16 @@
 function sayHi(user) {
-    if (user.corsair)
-        return `Йо‑хо‑хо! Меня зовут ${user.name}. Я - корсар.`;
-    return `Йо‑хо‑хо! Меня зовут ${user.name}. Я - не корсар.`;
+  return `Йо‑хо‑хо! Меня зовут ${user.name}. Я - ${
+    user.corsair ? 'корсар' : 'не корсар'
+  }.`;
 }
 
-function moveTo(user, x, y) {
-  const newX = user.location[0] + x;
-  const newY = user.location[1] + y;
-  if ((-1 <= x && x <= 1) && (-1 <= y && y <= 1)) {
-    if (newX >= 0 && newX <= 99) {
-      user.location[0] = newX;
-    }
-
-    if (newY >= 0 && newY <= 99) {
-      user.location[1] = newY;
-    }
+function moveTo(user, moveX, moveY) {
+  if (-1 <= moveX && moveX <= 1 && -1 <= moveY && moveY <= 1) {
+    if (0 <= user.location[0] + moveX && user.location[0] + moveX < 100)
+      user.location[0] += moveX;
+    if (0 <= user.location[1] + moveY && user.location[1] + moveY < 100)
+      user.location[1] += moveY;
   }
-
   return user.location;
 }
 
