@@ -1,17 +1,28 @@
-const { getCoins, getCoords, getShipNumber } = require('./lib.js');
+const { getcoins, getCoords, getShipNumber } = require('./lib.js');
 
 const user = {
-  name: 'Structia',
-  image: 'structia.png',
-  corsair: false,
+  name: 'Bloomberg',
+  image: 'bloomberg.png',
+  corsair: true,
   legend:
-    'Открывает новые горизонты. Не упустит возможность поспать в пивном трюме. \
-Одноглазый. Заботится о собственном домашнем питоне',
-  friends: ['HellsingLan', 'Maria', 'Cap'],
-  coins: getCoins(3),
-  ship: getShipNumber(16, 6),
-  location: getCoords(),
-  github: 'mksmvnv',
+    'Старый пират. Друг Флинта. Жаден. Ради денег готов на все. Характер мерзкий. Женат.',
+  friends: ['Esperança', 'Maria', 'Cap'],
+  coins: [],
+  ship: ((14 + 11) % 2) + 1,
+  location: [],
 };
 
+function getcoin() {
+  return Math.floor(Math.random() * 16 ** 5).toString(16);
+}
+
+function getCord() {
+  return Math.floor(Math.random() * 100);
+}
+user.coins.push(getcoin());
+user.coins.push(getcoin());
+user.coins.push(getcoin());
+user.location = [getCord(), getCord()];
+user.github = 'BisVictor';
 console.log(JSON.stringify(user, null, 2));
+
