@@ -11,15 +11,18 @@ function getDice() {
   return Math.floor(Math.random() * 6 + 1);
 }
 
+function getRandomEl(arr){
+  return arr[Math.floor(Math.random() * arr.length)];
+}
 function getRPS() {
   const RPS = ['камень', 'ножницы', 'бумага'];
-  return RPS[Math.floor(Math.random() * 3)];
+  return getRandomEl(RPS);
 }
 
 function getPhrase(part1, part2, part3) {
-    const PHRASE1 = part1[Math.floor(Math.random() * 4)];
-    const PHRASE2 = part2[Math.floor(Math.random() * 4)];
-    const PHRASE3 = part3[Math.floor(Math.random() * 3)];
+    const PHRASE1 = part1[Math.floor(Math.random() * part1.length)];
+    const PHRASE2 = part2[Math.floor(Math.random() * part2.length)];
+    const PHRASE3 = part3[Math.floor(Math.random() * part3.length)];
     return `${PHRASE1} ${PHRASE2} ${PHRASE3}`;
 }
 
