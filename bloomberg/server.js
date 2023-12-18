@@ -1,4 +1,4 @@
-const profiles = require('../package.json');
+const profiles = require('../profiles.json');
 const app = require('../app');
 
 app.get('/', function(req, res){
