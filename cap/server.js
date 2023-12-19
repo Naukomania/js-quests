@@ -1,6 +1,6 @@
 const app = require('../app');
-const { getRandomColor } = require('../common/random');
 const profiles = require('../profiles');
+const { getRandomColor } = require('../common/random');
 
 app.get('/', (req, res) => {
   res.json('Hello World!');
