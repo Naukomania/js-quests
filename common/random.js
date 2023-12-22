@@ -1,28 +1,24 @@
 function getRandomColor() {
-  const hexRGB = [];
-  for (let i = 0; i < 3; i++) {
-    hex = Math.floor((Math.random() * 255) + 1).toString(16);
-    hexRGB.push(hex.length === 1 ? '0' + hex : hex);
-  }
-  return `#${hexRGB[0]}${hexRGB[1]}${hexRGB[2]}`;
+  const ARRAY = '0123456789abcdef';
+  let color = '#';
+  for (let i = 0; i < 6; i++) color += ARRAY[Math.floor(Math.random() * 16)];
+  return color;
 }
 
 function getDice() {
-  res = Math.floor(Math.random() * 6) + 1;
-  return res;
+  return Math.floor(Math.random() * 6) + 1;
+}
+
+function getRandomEl(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 function getRPS() {
-  RPS = ['камень', 'ножницы', 'бумага'];
-  const randomRPS = RPS[Math.floor(Math.random() * RPS.length)];
-  return randomRPS;
+  return getRandomEl(['камень', 'ножницы', 'бумага']);
 }
 
 function getPhrase(part1, part2, part3) {
-  randomPart1 = part1[Math.floor(Math.random() * part1.length)];
-  randomPart2 = part2[Math.floor(Math.random() * part2.length)];
-  randomPart3 = part3[Math.floor(Math.random() * part3.length)];
-  return `${randomPart1} ${randomPart2} ${randomPart3}`;
+  return `${getRandomEl(part1)} ${getRandomEl(part2)} ${getRandomEl(part3)}`;
 }
 
 module.exports = {
