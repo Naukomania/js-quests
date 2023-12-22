@@ -1,4 +1,5 @@
 const app = require('../app');
+
 const profiles = require('../profiles.json');
 
 app.get('/', function (req, res) {

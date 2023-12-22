@@ -1,4 +1,4 @@
-// получаем пирата из файла
+
 const user = require('./profile.json');
 // для примера name = "Эмма Суон", location = [2, 10], corsair = false
 
