@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Cap",
+    "image": "cap.png",
+    "corsair": false,
+    "legend": "Возможно, турок. Старый солдат, не знающий слов любви. Иногда придумывает пословицы и ругательства. Потом делает вид, что так говорят все уважаемые пираты.",
+    "friends": ["Henry StormBlade", "HellsingLan", "Bloomberg"],
+    "coins": ["34744", "46aa0", "0ad8f"],
+    "ship": 1,
+    "location": [12, 36],
+    "github": "naukomania"
+  },
+  {
+    "name": "Esperanca",
+    "image": "esperanca.png",
+    "corsair": false,
+    "legend": "Путешественница. Видит будущее. Там, где она всегда есть Надежда.",
+    "friends": ["Cap", "Maria", "Structia", "HellsingLan"],
+    "coins": ["ced01", "57127", "5614c", "86a9f"],
+    "ship": 2,
+    "location": [17, 72],
+    "github": "NadezhdaDorogi"
+  },
+  {
+    "name": "HellsingLan",
+    "image": "hellsinglan.png",
+    "corsair": false,
+    "legend": "Беглый матрос с Летучего Голландца.",
+    "friend": ["Cap", "Structia", "Oditrom"],
+    "coins": ["d1b51", "a82a8", "ec76d"],
+    "ship": 1,
+    "location": [83, 87],
+    "github": "HellsingLan"
+  },
+  {
+    "name": "Henry StormBlade",
+    "image": "henry_storm_blade.png",
+    "corsair": true,
+    "legend": "Генри Штормовой клинок - высокий и мускулистый пират. Храбрый и решительный. Служил на 'Чёрной Жемчужине'",
+    "friends": ["Alex Hook", "cap"],
+    "coins": ["33f67", "5be4a", "85371"],
+    "ship": 2,
+    "location": [74, 5],
+    "github": "garryKarri"
+  },
+  {
+    "name": "PanPan",
+    "image": "panpan.png",
+    "corsair": true,
+    "legend": "Забывчивый немного сумасшедший библиотекарь. Который может подсказать что-то, но периодически что-то может и напутать.",
+    "friends": ["Cap ", "HellsingLan", "Bloomberg"],
+    "coins": ["cd6c02", "4ff309", "52a8c3"],
+    "ship": 1,
+    "location": [47, 50],
+    "github": "https://github.com/ctpaep"
+  },
+  {
+    "name": "Structia",
+    "image": "structia.png",
+    "corsair": false,
+    "legend": "Открывает новые горизонты. Не упустит возможность поспать в пивном трюме. Одноглазый. Заботится о собственном домашнем питоне",
+    "friends": ["HellsingLan", "Maria", "Cap"],
+    "coins": ["26f1f", "0e520", "0a286"],
+    "ship": 2,
+    "location": [1, 18],
+    "github": "mksmvnv"
+  },
+  {
+    "name": "Bloomberg",
+    "image": "bloomberg.png",
+    "corsair": true,
+    "legend": "Старый пират. Друг Флинта. Жаден. Ради денег готов на все. Характер мерзкий. Женат.",
+    "friends": [
+      "Esperança",
+      "Maria",
+      "Cap"
+    ],
+    "coins": [
+      "94e84",
+      "38a99",
+      "9d9f3"
+    ],
+    "ship": 1,
+    "location": [
+      97,
+      94
+    ],
+    "github": "BisVictor"
+  }
+]
