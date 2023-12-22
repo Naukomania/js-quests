@@ -3,8 +3,8 @@ const user = require('./profile.json');
 // для примера name = "Эмма Суон", location = [2, 10], corsair = false
 
 // подключение библиотек
-const { getRandomColor, getDice, getRPS, getPhrase } = require('./random');
-const { sayHi, moveTo } = require('./pirate');
+const { getRandomColor, getDice, getRPS, getPhrase } = require('../common/random');
+const { sayHi, moveTo } = require('../common/pirate');
 
 console.log(sayHi(user)); // output: Йо‑хо‑хо! Меня зовут Эмма Суон. Я - не корсар.
 
