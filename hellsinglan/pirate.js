@@ -6,8 +6,8 @@ function sayHi(user) {
 
 function moveTo(user, moveX, moveY) {
   if (-1 <= moveX && moveX <= 1 && -1 <= moveY && moveY <= 1) {
-    if (0 <= user.location[0] <= 100) user.location[0] += moveX;
-    if (0 <= user.location[1] <= 100) user.location[1] += moveY;
+    if (0 <= user.location[0] + moveX && user.location[0] <= 99) user.location[0] += moveX;
+    if (0 <= user.location[1] + moveY && user.location[1] <= 99) user.location[1] += moveY;
   }
   return user.location;
 }
@@ -17,10 +17,3 @@ module.exports = {
   moveTo,
 };
 
-// function moveTo (y) {
-//   let x = 10;
-//   if (0 <= y < 100) x += y;
-//   console.log(x);
-// }
-
-// moveTo(4);
