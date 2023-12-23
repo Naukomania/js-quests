@@ -15,16 +15,15 @@ app.post('/parrot', function (req, res) {
   console.log(req.body);
   res.json(req.body);
 });
-
-app.post('/parrot/repeat', (req, res) => {
+app.post('/parrot/:command', (req, res) => {
   const text = req.body.text;
-  text ? res.json(`${text} ${text}`) : errorAnswer(res);
-});
-
-app.post('/parrot/ask', (req, res) => {
-  const text = req.body.text;
-  text ? res.json(`Без бутылки рома не разберешься \"${text}\"`) : errorAnswer(res);
-});
+  switch(req.params.command){
+    case 'repeat':
+      text ? res.json(`${text} ${text}`) : errorAnswer(res);
+    case 'ask':
+      text ? res.json(`Без бутылки рома не разберешься \"${text}\"`) : errorAnswer(res);
+  }
+})
 
 app.get('/profiles', (req, res) => {
   if (req.query.name) {
