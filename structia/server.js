@@ -61,8 +61,6 @@ app.get('/random/coords', (req, res) => {
   res.json(lib.getCoords());
 });
 
-const n = 3; // Почему то иначе аргумент n используемый в lib.js не подтягивается из task2.js
-
 app.get('/random/coins', (req, res) => {
-  res.json(lib.getCoins(n));
+  res.json(lib.getCoins(3));
 });
