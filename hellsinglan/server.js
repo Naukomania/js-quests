@@ -10,41 +10,43 @@ app.get('/', function (req, res) {
   res.json('Hello world');
 });
 
-// app.get('/profiles', function (req, res) {
-//   if (req.query.name) {
-//     const name = req.query.name;
-//     const profile = profiles.find(function (item) {
-//       if (item.name === name) return true;
-//       else return false;
-//     });
-//     res.json(profile);
-//   } else res.json(profiles);
-// });
+app.post('/parrot/repeat', (req, res) => {
+  const text = req.body.text;
+  text ? res.json(`${text} ${text}`) : errorAnswer();
+})
+
+app.post('/parrot/ask', (req, res) => {
+  const text = req.body.text;
+  text ? res.json('Без бутылки рома тут не разберешься') : errorAnswer();
+})
+
+function errorAnswer(){
+  return res.json('Ничего я вам не скажу!');
+}
 
 app.get('/profiles', function (req, res) {
   if (req.query.name) {
     const name = req.query.name;
     const profile = profiles.find(function (item) {
-      if (item.name === name) return true;
-      else return false;
+      return item.name === name;
     });
-    res.json(profile);
-    return;
-  }
-
+    return res.json(profile);
+  } 
   else if (req.query.corsair) {
-    const isCorsair = Boolean(+req.query.corsair);
-    const filteredProfiles = profiles.filter((profile) => {
+    const isCorsair = Boolean(req.query.corsair);
+    const filterProfilesCorsair = profiles.filter((profile) => {
       return profile.corsair === isCorsair;
     });
-    res.json(filteredProfiles);
-    return;
+    return res.json(filterProfilesCorsair);
   }
-
-//   else if (req.query.ship) {
-//     const ship = Boolean(+req.query.ship);
-//   } 
-    else res.json(profiles);
+  else if (req.query.ship) {
+    const ship = Number(req.query.ship);
+    const filterProfilesShip = profiles.filter((profile) => {
+      return profile.ship === ship;
+    });
+    return res.json(filterProfilesShip);
+  }
+  res.json(profiles);
 });
 
 app.post('/parrot', function (req, res) {
@@ -52,22 +54,28 @@ app.post('/parrot', function (req, res) {
   res.json(req.body);
 });
 
-app.get('/random/color', function (req, res) {
-  res.json(getRandomColor());
+app.get('/random/:command', (req, res) => {
+  switch (req.params.command) {
+    case 'color':
+      res.json(getRandomColor());
+      break;
+    case 'dice':
+      res.json(getDice());
+      break;
+    case 'rps':
+      res.json(getRPS());
+      break;
+  }
 });
 
-app.get('/random/dice', function (req, res) {
-  res.json(getDice());
-});
-
-app.get('/random/rps', function (req, res) {
-  res.json(getRPS());
-});
-
-app.get('/lib/coords', (req, res) => {
-  res.json(getCoords());
-});
-
-app.get('/lib/coins', (req, res) => {
-  res.json(getCoins(numCoins));
-});
+app.get('/lib/:command', (req, res) => {
+  switch (req.params.command){
+    case 'coords':
+      res.json(getCoords());
+      break;
+    case 'coins':
+      res.json(getCoins(req.query.num));
+      break;
+    default: errorAnswer();
+  }
+})
