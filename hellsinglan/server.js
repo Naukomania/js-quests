@@ -17,15 +17,15 @@ app.post('/parrot', function (req, res) {
 
 app.post('/parrot/repeat', (req, res) => {
   const text = req.body.text;
-  text ? res.json(`${text} ${text}`) : errorAnswer();
+  text ? res.json(`${text} ${text}`) : errorAnswer(res);
 })
 
 app.post('/parrot/ask', (req, res) => {
   const text = req.body.text;
-  text ? res.json(`Без бутылки рома не разберешься \"${text}\"`) : errorAnswer();
+  text ? res.json(`Без бутылки рома не разберешься \"${text}\"`) : errorAnswer(res);
 })
 
-function errorAnswer(){
+function errorAnswer(res){
   return res.json('Ничего я вам не скажу!');
 }
 
