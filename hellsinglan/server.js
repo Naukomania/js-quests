@@ -1,10 +1,7 @@
 const app = require('../app');
 const profiles = require('../profiles.json');
-const { getRandomColor } = require('../common/random.js');
-const { getDice } = require('../common/random.js');
-const { getRPS } = require('../common/random.js');
-const { getCoords } = require('./lib.js');
-const { getCoins } = require('./lib.js');
+const { getRandomColor, getDice, getRPS } = require('../common/random.js');
+const { getCoords, getCoins } = require('./lib.js');
 const { moveTo } = require('../common/pirate.js');
 
 app.get('/', function (req, res) {
