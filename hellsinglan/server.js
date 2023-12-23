@@ -10,6 +10,11 @@ app.get('/', function (req, res) {
   res.json('Hello world');
 });
 
+app.post('/parrot', function (req, res) {
+  console.log(req.body);
+  res.json(req.body);
+});
+
 app.post('/parrot/repeat', (req, res) => {
   const text = req.body.text;
   text ? res.json(`${text} ${text}`) : errorAnswer();
@@ -17,7 +22,7 @@ app.post('/parrot/repeat', (req, res) => {
 
 app.post('/parrot/ask', (req, res) => {
   const text = req.body.text;
-  text ? res.json('Без бутылки рома тут не разберешься') : errorAnswer();
+  text ? res.json(`Без бутылки рома не разберешься \"${text}\"`) : errorAnswer();
 })
 
 function errorAnswer(){
@@ -49,10 +54,6 @@ app.get('/profiles', function (req, res) {
   res.json(profiles);
 });
 
-app.post('/parrot', function (req, res) {
-  console.log(req.body);
-  res.json(req.body);
-});
 
 app.get('/random/:command', (req, res) => {
   switch (req.params.command) {
