@@ -12,13 +12,16 @@ app.post('/parrot', function (req, res) {
   console.log(req.body);
   res.json(req.body);
 });
+
 app.post('/parrot/:command', (req, res) => {
   const text = req.body.text;
   switch(req.params.command){
     case 'repeat':
       text ? res.json(`${text} ${text}`) : errorAnswer(res);
+      break;
     case 'ask':
       text ? res.json(`Без бутылки рома не разберешься \"${text}\"`) : errorAnswer(res);
+      break;
   }
 })
 
