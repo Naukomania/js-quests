@@ -58,12 +58,12 @@ app.get('/random/rps', (req, res) => {
   res.json(random.getRPS());
 });
 
-app.get('/random/coords', (req, res) => {
+app.get('/lib/coords', (req, res) => {
   res.json(lib.getCoords());
 });
 
-app.get('/random/coins', (req, res) => {
-  res.json(lib.getCoins(3));
+app.get('/lib/coins', (req, res) => {
+  res.json(lib.getCoins(req.query.n));
 });
 
 app.get('/profiles/me', (req, res) => {
