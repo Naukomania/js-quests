@@ -90,10 +90,10 @@ app.post('/profiles/me/:command', (req, res) => {
     case 'move':
       const x = req.body.x;
       const y = req.body.y;
-      if (typeof(x) === 'number' && typeof(y) === 'number') 
-        if(x == 1 && y == 1)
+      if (typeof(x) === 'number' && typeof(y) === 'number'){
+        if((-1 <= x && x <=1) && (-1 <= y && y <= 1))
           res.json(moveTo(hellsinglan, x, y))
-        else res.json('Что ты прыгаешь? Ходи, как все нормальные одноногие пираты!');
+        else res.json('Что ты прыгаешь? Ходи, как все нормальные одноногие пираты!');}
       else errorAnswer(res);
       break;
     default: errorAnswer(res);
