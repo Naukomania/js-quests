@@ -1,14 +1,6 @@
 const getRandomColor = () => {
-  //  rgb 256 256 256
-  // const randomInt = () => Math.floor(Math.random() * 256);
-  // const r = randomInt(); // Случайное число для красного
-  // const g = randomInt(); // Случайное число для зеленого
-  // const b = randomInt(); // Случайное число для синего
-  // return `rgb(${r}, ${g}, ${b})`; // Возвращаем строку в формате "rgb(число, число, число)"
-
-  // Формат rgb HEX
-  const randomColor = Math.floor(Math.random() * 16 ** 6).toString(16); // Генерируем случайное число в 16-ричной системе
-  return `#${randomColor.toUpperCase()}`;
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16); // Генерация случайного числа в 16-ричной системе
+  return `#${randomColor.padStart(6, '0').toUpperCase()}`; // Дополнение нулями до шести символов и приведение к верхнему регистру
 };
 
 const getDice = () => {
