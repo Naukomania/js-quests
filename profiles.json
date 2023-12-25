@@ -70,21 +70,21 @@
     "image": "bloomberg.png",
     "corsair": true,
     "legend": "Старый пират. Друг Флинта. Жаден. Ради денег готов на все. Характер мерзкий. Женат.",
-    "friends": [
-      "Esperança",
-      "Maria",
-      "Cap"
-    ],
-    "coins": [
-      "94e84",
-      "38a99",
-      "9d9f3"
-    ],
+    "friends": ["Esperança", "Maria", "Cap"],
+    "coins": ["94e84", "38a99", "9d9f3"],
     "ship": 1,
-    "location": [
-      97,
-      94
-    ],
+    "location": [97, 94],
     "github": "BisVictor"
+  },
+  {
+    "name": "Oditrom",
+    "image": "oditrom.png",
+    "corsair": true,
+    "legend": "Матерый морской волк. Знает, что если дело важное, то не надо суетиться.",
+    "friends": ["Bloomberg", "AlexHook", "Maria"],
+    "github": "Oditrom",
+    "coins": ["43633", "9230d", "afd54"],
+    "location": [64, 6],
+    "ship": 2
   }
 ]
