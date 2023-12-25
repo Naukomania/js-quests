@@ -77,8 +77,17 @@ app.get('/lib/:command', (req, res) => {
 
 app.get('/profiles/me', (req, res) => {
   const hellsinglan = profiles.find((profile) => profile.name === 'HellsingLan');
-
-  return;
+  let friendName, friendProfile;
+  for(let i = 0; i < hellsinglan.friend.length; i++){
+    friendName = hellsinglan.friend[i];
+    friendProfile = profiles.find((profile) => profile.name === friendName);
+    if(friendProfile){
+      const { name, image, legend, ship } = friendProfile;
+      hellsinglan.friend[i] = { name, image, legend, ship };
+    } else hellsinglan.friend.splice(i--, 1);
+  }
+  const { name, image, legend, friend, ship } = hellsinglan;
+  return res.json({ name, image, legend, friend, ship });
 })
 
 app.post('/profiles/me/:command', (req, res) => {
@@ -93,8 +102,8 @@ app.post('/profiles/me/:command', (req, res) => {
       if (typeof(x) === 'number' && typeof(y) === 'number'){
         if((-1 <= x && x <=1) && (-1 <= y && y <= 1))
           res.json(moveTo(hellsinglan, x, y))
-        else res.json('Что ты прыгаешь? Ходи, как все нормальные одноногие пираты!');}
-      else errorAnswer(res);
+        else res.json('Что ты прыгаешь? Ходи, как все нормальные одноногие пираты!');
+      } else errorAnswer(res);
       break;
     default: errorAnswer(res);
   }
