@@ -1,0 +1,22 @@
+{
+  "name": "Oditrom",
+  "image": "oditrom.png",
+  "corsair": true,
+  "legend": "Матерый морской волк. Знает, что если дело важное, то не надо суетиться.",
+  "friends": [
+    "Bloomberg",
+    "AlexHook",
+    "Maria"
+  ],
+  "github": "Oditrom",
+  "coins": [
+    "43633",
+    "9230d",
+    "afd54"
+  ],
+  "location": [
+    64,
+    6
+  ],
+  "ship": 1
+}
