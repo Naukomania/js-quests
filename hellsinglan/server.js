@@ -88,7 +88,7 @@ app.get('/profiles/me', (req, res) => {
   }
   const { name, image, legend, friend, ship } = hellsinglan;
   return res.json({ name, image, legend, friend, ship });
-})
+});
 
 app.post('/profiles/me/:command', (req, res) => {
   const hellsinglan = profiles.find((profile) => profile.name === 'HellsingLan');
