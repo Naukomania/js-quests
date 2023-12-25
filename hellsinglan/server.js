@@ -73,7 +73,7 @@ app.get('/lib/:command', (req, res) => {
       break;
     default: errorAnswer(res);
   }
-})
+});
 
 app.get('/profiles/me', (req, res) => {
   const hellsinglan = profiles.find((profile) => profile.name === 'HellsingLan');
