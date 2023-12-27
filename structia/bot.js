@@ -7,27 +7,82 @@ const bot = require('../bot');
 const mapSize = 100;
 let piratePosition = { x: 50, y: 50 };
 let enemies = [{ x: randomCoordinate(), y: randomCoordinate() }];
-let treasure = { x: 51, y: 51 };
+let test_treasure = { x: 51, y: 51 };
 
-// Функция для генерации случайных координат
 function randomCoordinate() {
   return Math.floor(Math.random() * mapSize);
 }
 
-// Обработка команды "/start"
+// Клавиатура для перемещения
+const moveKeyboard = {
+  reply_markup: {
+    inline_keyboard: [
+      [{ text: 'Вверх', callback_data: 'вверх' }],
+      [
+        { text: 'Влево', callback_data: 'влево' },
+        { text: 'Вправо', callback_data: 'вправо' },
+      ],
+      [{ text: 'Вниз', callback_data: 'вниз' }],
+      [{ text: 'Копать', callback_data: 'копать' }],
+    ],
+  },
+};
+
 bot.onText(/\/start/, (msg) => {
-  bot.sendMessage(msg.chat.id, 'Привет, пират! Начнем поиски сокровищ!');
-  piratePosition = { x: 50, y: 50 }; // Стартовая позиция пирата
-  enemies = [{ x: randomCoordinate(), y: randomCoordinate() }]; // Позиция врага
-  treasure = { x: 51, y: 51 }; // Позиция сокровища
+  piratePosition = { x: 50, y: 50 };
+  enemies = [{ x: randomCoordinate(), y: randomCoordinate() }];
+  test_treasure = { x: 51, y: 51 };
+  bot.sendMessage(
+    msg.chat.id,
+    'Привет, пират! Начнем поиски сокровищ!',
+    moveKeyboard
+  );
 });
 
-// Обработка команд перемещения
-bot.onText(/\/move (.+)/, (msg, match) => {
-  const chatId = msg.chat.id;
-  const direction = match[1];
+// Обработка нажатий на кнопки
+bot.on('callback_query', (callbackQuery) => {
+  const message = callbackQuery.message;
+  const data = callbackQuery.data;
 
-  // Перемещение пирата
+  movePirate(data);
+
+  let responseText = `Пират переместился на [${piratePosition.x}, ${piratePosition.y}]`;
+  // Добавил флаг найденного сокровища
+  let found_treasure = false;
+
+  if (
+    piratePosition.x === test_treasure.x &&
+    piratePosition.y === test_treasure.y
+  ) {
+    responseText = 'Поздравляю! Ты нашел сокровище!';
+    test_treasure = { x: 51, y: 51 };
+    // Если условие поиска сокровища выполняется меняем флаг на true
+    found_treasure = true;
+  } else if (
+    enemies.some(
+      (enemy) => enemy.x === piratePosition.x && enemy.y === piratePosition.y
+    )
+  ) {
+    responseText = 'О нет! Ты встретил врага!';
+  }
+
+  // В случае, если юзер нажал кнопку копать, выводим сообщение в зависимости от булевого значения нашего флага
+  if (data === 'копать') {
+    if (found_treasure) {
+      responseText = 'Нашёл!';
+    } else {
+      responseText = 'Не нашёл.';
+    }
+  }
+
+  bot.editMessageText(responseText, {
+    chat_id: message.chat.id,
+    message_id: message.message_id,
+    reply_markup: moveKeyboard.reply_markup,
+  });
+});
+
+function movePirate(direction) {
   switch (direction) {
     case 'вверх':
       piratePosition.y = Math.max(0, piratePosition.y - 1);
@@ -41,29 +96,7 @@ bot.onText(/\/move (.+)/, (msg, match) => {
     case 'вправо':
       piratePosition.x = Math.min(mapSize - 1, piratePosition.x + 1);
       break;
-    default:
-      bot.sendMessage(chatId, 'Я не знаю такого направления!');
-      return;
   }
+}
 
-  // Проверка на столкновение с врагом или нахождение сокровища
-  if (piratePosition.x === treasure.x && piratePosition.y === treasure.y) {
-    bot.sendMessage(chatId, 'Поздравляю! Ты нашел сокровище!');
-    // Генерация нового сокровища
-    treasure = { x: randomCoordinate(), y: randomCoordinate() };
-  } else if (
-    enemies.some(
-      (enemy) => enemy.x === piratePosition.x && enemy.y === piratePosition.y
-    )
-  ) {
-    bot.sendMessage(chatId, 'О нет! Ты встретил врага!');
-  } else {
-    bot.sendMessage(
-      chatId,
-      `Пират переместился на [${piratePosition.x}, ${piratePosition.y}]`
-    );
-  }
-});
-
-// Запуск бота
 bot.on('polling_error', (error) => console.log(error));
