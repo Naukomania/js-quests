@@ -5,12 +5,21 @@ require('dotenv').config({
 const bot = require('../bot');
 
 const mapSize = 100;
-let piratePosition = { x: 0, y: 0 };
+let piratePosition = { x: 50, y: 50 };
+let enemies = [{ x: randomCoordinate(), y: randomCoordinate() }];
+let treasure = { x: 51, y: 51 };
+
+// Функция для генерации случайных координат
+function randomCoordinate() {
+  return Math.floor(Math.random() * mapSize);
+}
 
 // Обработка команды "/start"
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(msg.chat.id, 'Привет, пират! Начнем поиски сокровищ!');
   piratePosition = { x: 50, y: 50 }; // Стартовая позиция пирата
+  enemies = [{ x: randomCoordinate(), y: randomCoordinate() }]; // Позиция врага
+  treasure = { x: 51, y: 51 }; // Позиция сокровища
 });
 
 // Обработка команд перемещения
@@ -37,10 +46,23 @@ bot.onText(/\/move (.+)/, (msg, match) => {
       return;
   }
 
-  bot.sendMessage(
-    chatId,
-    `Пират переместился на [${piratePosition.x}, ${piratePosition.y}]`
-  );
+  // Проверка на столкновение с врагом или нахождение сокровища
+  if (piratePosition.x === treasure.x && piratePosition.y === treasure.y) {
+    bot.sendMessage(chatId, 'Поздравляю! Ты нашел сокровище!');
+    // Генерация нового сокровища
+    treasure = { x: randomCoordinate(), y: randomCoordinate() };
+  } else if (
+    enemies.some(
+      (enemy) => enemy.x === piratePosition.x && enemy.y === piratePosition.y
+    )
+  ) {
+    bot.sendMessage(chatId, 'О нет! Ты встретил врага!');
+  } else {
+    bot.sendMessage(
+      chatId,
+      `Пират переместился на [${piratePosition.x}, ${piratePosition.y}]`
+    );
+  }
 });
 
 // Запуск бота
