@@ -1,20 +1,20 @@
-
+// получаем пирата из файла
 const user = require('./profile.json');
 // для примера name = "Эмма Суон", location = [2, 10], corsair = false
 
 // подключение библиотек
-const { getRandomColor, getDice, getRPS, getPhrase } = require('../common/random');
-const { sayHi, moveTo } = require('../common/pirate');
+const { getRandomColor, getDice, getRPS, getPhrase } = require('./random');
+const { sayHi, moveTo } = require('./pirate');
 
 console.log(sayHi(user)); // output: Йо‑хо‑хо! Меня зовут Эмма Суон. Я - не корсар.
 
 // получить случайный цвет в формате rgb
 console.log(getRandomColor()); // #aa3f82
 
-// выбросить кости рандомно (от 1 до 6)
+// // выбросить кости рандомно (от 1 до 6)
 console.log(getDice()); // 3
 
-// выбросить случайно "камень", "ножницы" или "бумагу"
+// // выбросить случайно "камень", "ножницы" или "бумагу"
 console.log(getRPS()); // "бумага"
 
 // перемещение пирата на вектор x, y с шагом 1
