@@ -37,7 +37,7 @@
     "image": "henry_storm_blade.png",
     "corsair": true,
     "legend": "Генри Штормовой клинок - высокий и мускулистый пират. Храбрый и решительный. Служил на 'Чёрной Жемчужине'",
-    "friends": ["Alex Hook", "cap"],
+    "friends": ["Alex Hook", "Cap"],
     "coins": ["33f67", "5be4a", "85371"],
     "ship": 2,
     "location": [74, 5],
@@ -70,21 +70,10 @@
     "image": "bloomberg.png",
     "corsair": true,
     "legend": "Старый пират. Друг Флинта. Жаден. Ради денег готов на все. Характер мерзкий. Женат.",
-    "friends": [
-      "Esperança",
-      "Maria",
-      "Cap"
-    ],
-    "coins": [
-      "94e84",
-      "38a99",
-      "9d9f3"
-    ],
+    "friends": ["Esperança", "Maria", "Cap"],
+    "coins": ["94e84", "38a99", "9d9f3"],
     "ship": 1,
-    "location": [
-      97,
-      94
-    ],
+    "location": [97, 94],
     "github": "BisVictor"
   }
 ]
