@@ -26,7 +26,6 @@ function getShipNumber (num, num2) : number { // получение случай
 
 
 module.exports = {
-    getCoin,
     getCoins,
     getCoord,
     getShipNumber,
